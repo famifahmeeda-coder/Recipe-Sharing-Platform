@@ -1,16 +1,30 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import FilterPanel from '../components/FilterPanel'
-import RecipeCard from '../components/RecipeCard'
-import SearchBar from '../components/SearchBar'
-import Footer from '../components/Footer'
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import SearchBar from '../components/SearchBar';
+import FilterPanel from '../components/FilterPanel';
+import Footer from '../components/Footer';
+import RecipeCard from "../components/RecipeCard";
+
+import recipes from "../data/recipes";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <>
+        <Navbar />
+        <Hero />
+        <SearchBar/>
+        <FilterPanel />
+       <h1>Yumoria</h1>
+        {recipes.map((recipe) => (
+         <RecipeCard
+    key={recipe.id}
+    recipe={recipe}
+  />
+      ))}
+      <p>Welcome to the Home Page.</p>
+      <Footer />
+    </>
   )
 }
 
