@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
-import RecipeDetails from './pages/RecipeDetails'
+import RecipeDetails from './pages/RecipeDetails'git status
 import Favorites from './pages/Favorites'
 import NotFound from './pages/NotFound'
 
