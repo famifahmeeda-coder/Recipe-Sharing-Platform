@@ -1,13 +1,27 @@
-import React from 'react'
+import React from "react"
 
 const Hero = () => {
   return (
-    <div>
-       <section>
-      <h1>Discover Delicious Recipes</h1>
-      <p>Search, Cook and Enjoy</p>
+    <section className="hero">
+
+      <div className="hero-content">
+
+        <p className="hero-small">
+          WELCOME TO YUMORIA
+        </p>
+
+        <h1>
+          Discover Delicious Recipes
+        </h1>
+
+        <p>
+          Search, explore and cook your favorite
+          dishes at home.
+        </p>
+
+      </div>
+
     </section>
-    </div>
   )
 }
 
