@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react"
 
 import Navbar from "../components/Navbar"
@@ -8,34 +9,38 @@ import FilterPanel from "../components/FilterPanel"
 import RecipeCard from "../components/RecipeCard"
 import Footer from "../components/Footer"
 
-import recipes from "../data/recipes"
+import API from "../api/axios"
 
 const Home = () => {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [recipes, setRecipes] = useState([])
 
+  const [searchTerm, setSearchTerm] = useState("")
   const [cuisine, setCuisine] = useState("")
   const [diet, setDiet] = useState("")
   const [difficulty, setDifficulty] = useState("")
 
   const [loading, setLoading] = useState(true)
-
   const [error, setError] = useState("")
 
   useEffect(() => {
-    try {
-      if (!recipes) {
-        throw new Error("Recipes could not be loaded.")
-      }
+    const fetchRecipes = async () => {
+      try {
+        const response = await API.get("/recipes")
 
-      const timer = setTimeout(() => {
+        setRecipes(
+          response.data.data.map((recipe) => ({
+            ...recipe,
+            id: recipe._id
+          }))
+        )
+      } catch (error) {
+        setError("Sorry, recipes could not be loaded.")
+      } finally {
         setLoading(false)
-      }, 500)
-
-      return () => clearTimeout(timer)
-    } catch (error) {
-      setError("Sorry, recipes could not be loaded.")
-      setLoading(false)
+      }
     }
+
+    fetchRecipes()
   }, [])
 
   const filteredRecipes = recipes.filter((recipe) => {
@@ -56,8 +61,7 @@ const Home = () => {
       diet === "" || recipe.diet === diet
 
     const difficultyMatch =
-      difficulty === "" ||
-      recipe.difficulty === difficulty
+      difficulty === "" || recipe.difficulty === difficulty
 
     return (
       searchMatch &&
@@ -70,7 +74,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
       <Hero />
 
       <SearchBar
@@ -92,18 +95,15 @@ const Home = () => {
           Discover Delicious Recipes
         </h1>
 
-        
         {loading && <Loading />}
 
-        
         {!loading && error && (
           <div className="error-message">
-            <h2>😔 Something went wrong</h2>
+            <h2> Something went wrong</h2>
             <p>{error}</p>
           </div>
         )}
 
-        
         {!loading && !error && (
           <div className="recipe-list">
             {filteredRecipes.length > 0 ? (
@@ -115,8 +115,7 @@ const Home = () => {
               ))
             ) : (
               <div className="no-results">
-                <h2>😔 No recipes found</h2>
-
+                <h2> No recipes found</h2>
                 <p>
                   Try another recipe name or change
                   the filters.
