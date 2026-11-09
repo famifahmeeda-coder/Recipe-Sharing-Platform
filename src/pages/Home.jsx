@@ -8,6 +8,7 @@ import Loading from "../components/Loading"
 import FilterPanel from "../components/FilterPanel"
 import RecipeCard from "../components/RecipeCard"
 import Footer from "../components/Footer"
+import AIRecipeSuggestions from "../components/AIRecipeSuggestions"
 
 import API from "../api/axios"
 
@@ -75,6 +76,8 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
+
+      <AIRecipeSuggestions />
 
       <SearchBar
         searchTerm={searchTerm}

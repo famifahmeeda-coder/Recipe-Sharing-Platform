@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import RecipeDetails from './pages/RecipeDetails'
 import Favorites from './pages/Favorites'
 import NotFound from './pages/NotFound'
+import Login from './pages/Login'
 
 
 const App = () => {
@@ -18,6 +19,9 @@ const App = () => {
         <Route path="/favorites" element={<Favorites />} />
 
         <Route path="*" element={<NotFound />} />
+
+         <Route path="/login" element={<Login />} />
+
 
        
       </Routes>
