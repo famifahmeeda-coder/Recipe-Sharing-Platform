@@ -1,7 +1,17 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
+  const token = localStorage.getItem("token")
+
+  const handleLogout = () => {
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
+
   return (
     <nav className="navbar">
 
@@ -18,6 +28,22 @@ const Navbar = () => {
         <Link to="/favorites">
           ❤️ Favorites
         </Link>
+
+        {token ? (
+          <button onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <>
+            <Link to="/login">
+              Login
+            </Link>
+
+            <Link to="/register">
+              Register
+            </Link>
+          </>
+        )}
 
       </div>
 

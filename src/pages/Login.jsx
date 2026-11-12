@@ -1,8 +1,10 @@
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import API from "../api/axios"
 
 function Login() {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [message, setMessage] = useState("")
@@ -19,6 +21,7 @@ function Login() {
             localStorage.setItem("token", response.data.token)
 
             setMessage("Login successful!")
+            navigate("/")
 
         } catch (error) {
             setMessage(
@@ -52,6 +55,10 @@ function Login() {
             </form>
 
             {message && <p>{message}</p>}
+            <p>
+                Don't have an account?{" "}
+                <a href="/register">Register</a>
+            </p>
         </div>
     )
 }

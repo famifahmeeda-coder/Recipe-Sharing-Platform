@@ -6,7 +6,7 @@ import RecipeDetails from './pages/RecipeDetails'
 import Favorites from './pages/Favorites'
 import NotFound from './pages/NotFound'
 import Login from './pages/Login'
-
+import Register from './pages/Register'
 
 const App = () => {
   return (
@@ -21,6 +21,8 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
 
          <Route path="/login" element={<Login />} />
+
+         <Route path="/register" element={<Register />} />
 
 
        
