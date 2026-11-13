@@ -1,16 +1,155 @@
-# React + Vite
+# Yumoria - Recipe Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Yumoria is a full-stack recipe sharing platform where users can explore recipes, search and filter dishes, save favorite recipes, and get AI-powered recipe suggestions based on available ingredients.
 
-Currently, two official plugins are available:
+This repository contains the React frontend of the Yumoria application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Browse recipes
+- Search recipes by name or ingredient
+- Filter recipes by cuisine
+- Filter recipes by diet
+- Filter recipes by difficulty
+- Add and manage favorite recipes
+- User registration and login
+- JWT-based authentication
+- AI-powered recipe suggestions
+- Recipe details
+- Cooking timer
+- Ingredient checklist
+- Print recipe option
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Router
+- Axios
+- JavaScript
+- HTML
+- CSS
+- React Icons
+- Framer Motion
+- React Hook Form
+- Day.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```text
+src/
+├── api/
+│   └── axios.js
+├── components/
+│   ├── AIRecipeSuggestions.jsx
+│   ├── Navbar.jsx
+│   ├── CookingTimer.jsx
+│   └── IngredientChecklist.jsx
+├── pages/
+│   ├── Home.jsx
+│   ├── RecipeDetails.jsx
+│   ├── Favorites.jsx
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   └── NotFound.jsx
+├── App.jsx
+└── main.jsx
+```
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/famifahmeeda-coder/Recipe-Sharing-Platform.git
+```
+
+Open the project folder:
+
+```bash
+cd Recipe-Sharing-Platform
+```
+
+Install the required packages:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will normally run at:
+
+```text
+http://localhost:5173
+```
+
+## Backend
+
+The frontend communicates with the Yumoria Node.js and Express backend through Axios.
+
+The backend provides APIs for:
+
+- Recipes
+- User registration and login
+- Authentication
+- Protected routes
+- AI recipe suggestions
+- MongoDB database operations
+
+## AI Recipe Suggestions
+
+Yumoria includes an AI feature that generates recipe suggestions based on ingredients entered by the user.
+
+For example:
+
+```text
+Chicken, Rice, Onion, Tomato
+```
+
+The frontend sends the ingredients to the backend, which communicates with the Gemini API and returns recipe suggestions.
+
+## Testing
+
+The following features have been tested during development:
+
+- User registration
+- User login
+- User logout
+- Login after logout
+- Recipe loading
+- Recipe search
+- Recipe filtering
+- Favorites
+- AI recipe suggestions
+- Protected AI access
+
+## Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Author
+
+Fathimath Fahmeeda
+
+GitHub:
+
+https://github.com/famifahmeeda-coder
+
+## License
+
+This project was created as a Full Stack Development capstone project.
