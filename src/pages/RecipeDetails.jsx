@@ -96,7 +96,7 @@ const RecipeDetails = () => {
 
       <section className="recipe-section">
         <h2>⏱️ Cooking Timer</h2>
-        <CookingTimer cookingTime={recipe.cookingTime} />
+        <CookingTimer minutes={recipe.cookingTime} />
       </section>
 
       <section className="recipe-section">
