@@ -88,6 +88,17 @@ The application will normally run at:
 http://localhost:5173
 ```
 
+
+## Live Demo
+
+**Frontend:** https://recipe-sharing-platform-gamma-drab.vercel.app
+
+**Backend:** https://yumoria-backend.onrender.com
+
+**GitHub Frontend:** https://github.com/famifahmeeda-coder/Recipe-Sharing-Platform
+
+**GitHub Backend:** https://github.com/famifahmeeda-coder/Yumoria-backend
+
 ## Backend
 
 The frontend communicates with the Yumoria Node.js and Express backend through Axios.
